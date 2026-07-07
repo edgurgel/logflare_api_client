@@ -31,7 +31,8 @@ defmodule LogflareApiClient.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tesla, "~> 1.0"},
+      # https://cna.erlef.org/cves/CVE-2026-48594.html
+      {:tesla, "~> 1.0 and >= 1.18.3"},
       {:jason, ">= 1.0.0"},
       {:finch, "~> 0.10"},
       {:bertex, "~> 1.3"},

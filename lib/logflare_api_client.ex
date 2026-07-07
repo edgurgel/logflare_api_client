@@ -25,7 +25,8 @@ defmodule LogflareApiClient do
          {"content-type", "application/bert"}
        ]},
       {Tesla.Middleware.BaseUrl, url},
-      {Tesla.Middleware.Compression, format: "gzip"}
+      # max_body_size is just for the response. (10 MB)
+      {Tesla.Middleware.Compression, format: "gzip", max_body_size: 10 * 1024 * 1024}
     ]
 
     Tesla.client(
